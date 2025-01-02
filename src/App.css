@@ -1,0 +1,15 @@
+body{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: black;
+}
+div{
+  height: 600px;
+  width: fit-content;
+  overflow: hidden;
+}
+img{
+  height: 100%;
+  width: 100%;
+}
