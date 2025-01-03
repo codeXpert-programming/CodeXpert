@@ -1,10 +1,13 @@
-function App() {
+import AppRouter from "./AppRouter"
+import Footer from "./Componenets/Footer"
+import Header from "./Componenets/Header"
+export default function App() {
   return (
-    <main>
-    <img src="/CodeXpert.jpg" alt="Logo" />
-    <h1>CodeXpert</h1>
-    <p>Code Your Path</p>
-    </main>
+    <>
+    <Header /> 
+    <AppRouter/>
+    <Footer/>
+    </>
   )
 }
-export default App
+
