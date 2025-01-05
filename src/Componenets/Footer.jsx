@@ -12,9 +12,9 @@ export default function Footer() {
       <div className="footerContent">
       <ul>
         <li onClick={() => navigateTo("/")}>Home</li> 
-        <li onClick={() => navigateTo("/")}>About Us</li> 
-        <li onClick={() => navigateTo("/")}>Courses</li> 
-        <li onClick={() => navigateTo("/")}>Enroll</li>
+        <li onClick={() => navigateTo("/about-us")}>About Us</li> 
+        <li onClick={() => navigateTo("/courses")}>Courses</li> 
+        <li onClick={() => navigateTo("/enroll")}>Enroll</li>
       </ul>
       </div>
       <hr />
