@@ -7,6 +7,10 @@ export default function Footer() {
     navigate(path);
   };
 
+  const openExternalLink = (url) => {
+    window.open(url, "_blank", "noopener,noreferrer");
+  };
+  
   return (
     <footer>
       <div className="footerContent">
@@ -24,10 +28,10 @@ export default function Footer() {
         </div>
       <div className="social-copyright">
         <div className="socials">
-          <i className="fa-brands fa-instagram" onClick={() => openExternalLink("https://www.instagram.com/")} />
-          <i className="fa-regular fa-envelope" onClick={() => openExternalLink("https://mail.google.com/mail/?view=cm&fs=1&to=")} />
-          <i className="fa-brands fa-linkedin" onClick={() => openExternalLink("https://linkedin.com/company/")} />
-          <i className="fa-brands fa-youtube" onClick={() => openExternalLink("https://www.youtube.com/channel/")} />
+          <i className="fa-brands fa-instagram" onClick={() => openExternalLink("https://www.instagram.com/codexpertofficial/")} />
+          <i className="fa-regular fa-envelope" onClick={() => openExternalLink("https://mail.google.com/mail/?view=cm&fs=1&to=scodexpert@gmail.com")} />
+          <i className="fa-brands fa-linkedin" onClick={() => openExternalLink("https://www.linkedin.com/company/codexpertprogramming/")} />
+          <i className="fa-brands fa-youtube" onClick={() => openExternalLink("https://www.youtube.com/channel/UCOOgw0LYe5oMImgRxxzdYUw")} />
         </div>
         <p>&copy; All rights reserved CodeXpert@2025</p>
       </div>
