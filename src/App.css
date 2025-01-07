@@ -203,9 +203,6 @@ footer{
 
 
 
-
-
-
 /* Container for the entire Enroll component */
 .enroll-container {
   background-color: #ffffff;
@@ -296,7 +293,7 @@ footer{
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
-  padding: 10px; /* Padding instead of gap */
+  padding: 10px;
 }
 
 /* Course item styling */
@@ -313,7 +310,7 @@ footer{
   transition: background-color 0.3s ease, transform 0.3s ease;
   color: black;
   text-align: center;
-  margin: 10px; /* Adding margin for spacing between items */
+  margin: 10px;
 }
 
 .course-item:hover {
@@ -340,26 +337,6 @@ footer{
   margin-bottom: 5px;
 }
 
-/* Captcha and submit button container */
-.captcha {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  margin-top: 20px;
-  color: white;
-}
-
-.captcha input {
-  width: 20px;
-  height: 20px;
-  margin-right: 10px;
-}
-
-.captcha p {
-  font-size: 14px;
-  color: white;
-}
-
 /* Submit button container styling */
 .submit-container {
   display: flex;
@@ -369,32 +346,174 @@ footer{
 
 /* Enroll Now Button Styling */
 form input[type="submit"] {
-  background-color: #4f89f9; /* Blue background */
-  color: white; /* White text */
+  background-color: #4f89f9;
+  color: white;
   border: none;
-  padding: 16px 40px; /* Adjust padding for a better button size */
-  font-size: 18px; /* Text size */
-  border-radius: 8px; /* Rounded corners */
-  cursor: pointer; /* Pointer cursor on hover */
-  transition: background-color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease; /* Smooth transition for hover effects */
+  padding: 16px 40px;
+  font-size: 18px;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
 }
 
-/* Hover Effect for the Button */
 form input[type="submit"]:hover {
-  background-color: #3578e5; /* Darker blue on hover */
-  transform: scale(1.05); /* Slight scale effect */
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Shadow effect on hover */
+  background-color: #3578e5;
+  transform: scale(1.05);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 }
 
 form input[type="submit"]:active {
-  background-color: #2f6eb5; /* Even darker blue when clicked */
-  transform: scale(1); /* Reset scale when clicked */
-  box-shadow: none; /* Remove shadow when clicked */
+  background-color: #2f6eb5;
+  transform: scale(1);
+  box-shadow: none;
 }
 
 form input[type="submit"]:focus {
-  outline: none; /* Remove outline on focus */
+  outline: none;
 }
+/* Error Pop-up Styling */
+.error-popup {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Error content box */
+.error-content {
+  background-color: rgba(0, 0, 0, 0.8);
+  border-radius: 10px;
+  height: 25%;
+  width: 25%;
+  text-align: center;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center; /* Center horizontally */
+}
+
+/* Error message text */
+.error-content p {
+  font-size: 1.2rem;
+  color: rgb(255, 255, 255);
+  margin-top: 20px; /* Adds space from the top */
+}
+
+/* Close button for error pop-up */
+.error-close-btn {
+  position: absolute;
+  top: 5px;
+  right: 5px;
+  font-size: 2rem;
+  cursor: pointer;
+  color: rgb(255, 255, 255);
+}
+.error-close-btn:hover{
+  color: rgb(255, 0, 0);
+}
+
+/* Success Pop-up Styling */
+.success-popup {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5); /* Slightly darkened background */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Success content box */
+.success-content {
+  background-color: rgba(255, 255, 255, 0.8); /* Dark background */
+  border-radius: 10px;
+  height: 25%;
+  width: 25%;
+  text-align: center;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center; /* Center horizontally */
+}
+
+/* Success message text */
+.success-content p {
+  font-size: 1.2rem;
+  color: green; /* Change text color to green */
+  margin-top: 20px; /* Adds space from the top */
+}
+
+/* Close button for success pop-up */
+.success-close-btn {
+  position: absolute;
+  top: 5px;
+  right: 5px;
+  font-size: 2rem;
+  cursor: pointer;
+  color: rgb(255, 255, 255);
+}
+.success-close-btn:hover {
+  color: rgb(255, 0, 0); /* Change to green on hover */
+}
+
+
+/* Error Pop-up Styling for failed email */
+.error-popup-mail {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5); /* Slightly darkened background */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Error content box for failed email */
+.error-content-mail {
+  background-color: rgba(0, 0, 0, 0.8); /* Dark background */
+  border-radius: 10px;
+  height: 25%;
+  width: 25%;
+  text-align: center;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center; /* Center horizontally */
+}
+
+/* Error message text for failed email */
+.error-content-mail p {
+  font-size: 1.2rem;
+  color: red; /* Change text color to red for error */
+  margin-top: 20px; /* Adds space from the top */
+}
+
+/* Close button for error pop-up (failed email) */
+.error-close-btn-mail {
+  position: absolute;
+  top: 5px;
+  right: 5px;
+  font-size: 2rem;
+  cursor: pointer;
+  color: rgb(255, 255, 255);
+}
+
+.error-close-btn-mail:hover {
+  color: rgb(255, 0, 0); /* Red hover effect for close button */
+}
+
 
 /* Confirmation Pop-up Styling */
 .confirmation-popup {
@@ -424,65 +543,44 @@ form input[type="submit"]:focus {
   margin-top: 20px;
 }
 
-/* Button styling for confirmation */
 .confirmation-actions button {
   padding: 12px 25px;
   border-radius: 5px;
   cursor: pointer;
   border: none;
   font-size: 16px;
-  transition: background-color 0.3s ease, transform 0.3s ease; /* Smooth transition for hover effects */
+  transition: background-color 0.3s ease, transform 0.3s ease;
 }
 
 .confirm-btn {
-  background-color: #4caf50; /* Green for confirm */
+  background-color: #4caf50;
   color: white;
 }
 
-/* Confirm button hover */
 .confirm-btn:hover {
-  background-color: #45a049; /* Darker green on hover */
+  background-color: #45a049;
   transform: scale(1.05);
 }
 
-/* Confirm button active state */
 .confirm-btn:active {
-  background-color: #388e3c; /* Even darker green when clicked */
+  background-color: #388e3c;
   transform: scale(1);
 }
 
-/* Cancel button styling */
 .cancel-btn {
-  background-color: #f44336; /* Red for cancel */
+  background-color: #f44336;
   color: white;
 }
 
-/* Cancel button hover */
 .cancel-btn:hover {
-  background-color: #e53935; /* Darker red on hover */
+  background-color: #e53935;
   transform: scale(1.05);
 }
 
-/* Cancel button active state */
 .cancel-btn:active {
-  background-color: #d32f2f; /* Even darker red when clicked */
+  background-color: #d32f2f;
   transform: scale(1);
 }
-
-/* Thank You message styling */
-.thank-you-message {
-  text-align: center;
-  margin-top: 30px;
-  font-size: 18px;
-  color: #2dbf16;
-}
-.checkmark {
-  color: #2dbf16; /* Green color */
-  font-size: 24px; /* Adjust size as needed */
-  margin-right: 10px; /* Add some space between the checkmark and the text */
-}
-
-
 
 
 

@@ -4,7 +4,9 @@ import emailjs from 'emailjs-com';
 export default function Enroll() {
   const [selectedCourses, setSelectedCourses] = useState([]);
   const [showConfirmation, setShowConfirmation] = useState(false);
-  const [isSubmitted, setIsSubmitted] = useState(false);
+  const [showError, setShowError] = useState(false); // State for error message
+  const [showSuccess, setShowSuccess] = useState(false); // State for success popup
+  const [showErrorMail, setShowErrorMail] = useState(false); // State for success popup
 
   const courses = [
     { name: 'Java', imgSrc: '/java.svg' },
@@ -34,37 +36,59 @@ export default function Enroll() {
   const handleSubmit = (e) => {
     e.preventDefault();
 
-    // Submit only if at least one course is selected
-    if (selectedCourses.length === 0) {
-      alert('Please select at least one course.');
+    const name = e.target.name.value.trim();
+    const phone = e.target.phone.value.trim();
+    const email = e.target.email.value.trim();
+
+    if (!name || !phone || !email || selectedCourses.length === 0) {
+      if (selectedCourses.length === 0) {
+        setShowError(true); // Show error if no course is selected
+      }
       return;
     }
 
-    // EmailJS submit
+    setShowConfirmation(true);
+  };
+
+  const handleConfirmation = () => {
+    setShowConfirmation(false);
+
+    const form = document.querySelector('form'); // Get form reference
+
+    // Prepare template parameters
+    const templateParams = {
+      name: form.name.value,
+      email: form.email.value,
+      phone: form.phone.value,
+      selected_courses: selectedCourses.join(', '), // Convert selected courses array to string
+    };
+
+    // Send data using EmailJS
     emailjs
-      .sendForm(
-        '', // Your service ID
-        '', // Your template ID
-        e.target, // Form data
-        '' // Your user ID
+      .send(
+        'enrollforcourse', // Service ID (your EmailJS service ID)
+        'template_qap6qrw', // Template ID (your EmailJS template ID)
+        templateParams, // Template parameters
+        'T8zuwxeVEEbe1YzK5' // Public Key/User ID (your EmailJS public key)
       )
       .then(
         (response) => {
-          console.log('SUCCESS!', response);
-          setIsSubmitted(true);
+          setShowSuccess(true); // Show success popup
+          form.reset();
+          setSelectedCourses([]); // Clear selected courses after submission
         },
         (error) => {
-          alert('Failed to submit. Please try again later.');
+          setShowErrorMail(true);
         }
       );
   };
 
-  const handleConfirmation = () => {
-    setShowConfirmation(true); // Show the confirmation pop-up
+  const closeErrorPopup = () => {
+    setShowError(false); // Close the error popup
   };
 
-  const handleConfirmationClose = () => {
-    setShowConfirmation(false); // Close the confirmation pop-up
+  const closeSuccessPopup = () => {
+    setShowSuccess(false); // Close the success popup
   };
 
   return (
@@ -82,7 +106,16 @@ export default function Enroll() {
 
               <div className="form-field">
                 <label htmlFor="phone">Mobile:</label>
-                <input type="text" id="phone" name="phone" placeholder="Your phone number" required />
+                <input
+                  type="tel"
+                  id="phone"
+                  name="phone"
+                  pattern="\d{10}"
+                  maxLength="10"
+                  title="Please enter a valid 10-digit phone number"
+                  placeholder="Your phone number"
+                  required
+                />
               </div>
 
               <div className="form-field">
@@ -109,38 +142,48 @@ export default function Enroll() {
           </div>
 
           <div className="submit-container">
-          <input type="submit" value="Enroll Now" onClick={handleConfirmation} />
+            <input type="submit" value="Enroll Now" />
           </div>
         </form>
       </div>
 
-      {/* Confirmation Pop-up */}
+      {showError && (
+        <div className="error-popup">
+          <div className="error-content">
+            <span className="error-close-btn" onClick={closeErrorPopup}>×</span>
+            <p>Please select at least one course.</p>
+          </div>
+        </div>
+      )}
+
       {showConfirmation && (
         <div className="confirmation-popup">
           <div className="confirmation-content">
             <h3>Confirm Your Enrollment</h3>
             <p>Are you sure you want to enroll in these courses?</p>
             <div className="confirmation-actions">
-              <button
-                className="confirm-btn"
-                onClick={() => {
-                  setShowConfirmation(false); // Close pop-up
-                  handleSubmit({ preventDefault: () => {} }); // Submit form if confirmed
-                }}
-              >
-                Confirm
-              </button>
-              <button className="cancel-btn" onClick={handleConfirmationClose}>
-                Cancel
-              </button>
+              <button className="confirm-btn" onClick={handleConfirmation}>Confirm</button>
+              <button className="cancel-btn" onClick={() => setShowConfirmation(false)}>Cancel</button>
             </div>
           </div>
         </div>
       )}
 
-{isSubmitted && !showConfirmation && (
-  <div className="thank-you-message">
-    <p>Thank you for enrolling! We will process your registration soon.<span className="checkmark">&#10003;</span></p>
+      {showSuccess && (
+        <div className="success-popup">
+          <div className="success-content">
+            <span className="success-close-btn" onClick={closeSuccessPopup}>×</span>
+            <p>Thank you for enrolling! We will process your registration soon.&#10003;</p>
+          </div>
+        </div>
+      )}
+
+{showErrorMail && (
+  <div className="error-popup-mail">
+    <div className="error-content-mail">
+      <span className="error-close-btn-mail" onClick={() => setShowErrorMail(false)}>×</span>
+      <p>Failed to submit. Contact us at scodexpert@gmail.com.</p>
+    </div>
   </div>
 )}
 
