@@ -40,6 +40,9 @@ nav{
   }
   nav div button{
     border: none;
+    padding: 15px;
+    font-size: 1rem;
+    font-weight: 500;
     background-color: white;
     color: #000000;
     border-radius: 5px;
