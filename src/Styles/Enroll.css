@@ -1,0 +1,378 @@
+/* Container for the entire Enroll component */
+.enroll-container {
+    background-color: #ffffff;
+    padding: 50px 20px;
+    text-align: center;
+  }
+  
+  /* Header styling */
+  .enroll-container h2 {
+    font-size: 32px;
+    color: black;
+    margin: 0 0 40px 0;
+  }
+  
+  /* Form container inside black background */
+  .form-container {
+    background-color: #000;
+    padding: 50px 100px;
+    border-radius: 10px;
+    color: white;
+    width: 80%;
+    margin: auto;
+    text-align: left;
+  }
+  
+  /* Layout for the main form content */
+  .details-course {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+  }
+  
+  /* Left side: Personal details container */
+  .details-container {
+    width: 28%;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    padding: 20px;
+  }
+  
+  .details-container h3 {
+    font-size: 24px;
+    margin: 0 0 20px 0;
+    text-align: center;
+  }
+  
+  .details-container .form-field {
+    margin-bottom: 20px;
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .details-container label {
+    font-size: 18px;
+    margin-bottom: 5px;
+    text-align: center;
+  }
+  
+  .details-container input {
+    padding: 12px;
+    border-radius: 5px;
+    border: none;
+    font-size: 16px;
+    margin-top: 5px;
+  }
+  
+  /* Right side: Course selection container */
+  .course-selection {
+    width: 65%;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+  }
+  
+  /* Course selection title */
+  .course-selection h3 {
+    font-size: 24px;
+    color: white;
+    margin: 0 0 20px 0;
+  }
+  
+  /* Course list styling */
+  .course-list {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    padding: 10px;
+  }
+  
+  /* Course item styling */
+  .course-item {
+    width: 100px;
+    height: 150px;
+    background-color: white;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+    color: black;
+    text-align: center;
+    margin: 10px;
+  }
+  
+  .course-item:hover {
+    background-color: #f0f0f0;
+    transform: scale(1.05);
+  }
+  
+  .course-item.selected {
+    background-color: #4f89f9;
+    color: white;
+  }
+  
+  .course-title-enroll {
+    font-size: 14px;
+    font-weight: bold;
+    margin-top: 5px;
+  }
+  
+  /* Styling for images inside each course item */
+  .course-item img {
+    width: 80px;
+    height: 80px;
+    object-fit: contain;
+    margin-bottom: 5px;
+  }
+  
+  /* Submit button container styling */
+  .submit-container {
+    display: flex;
+    justify-content: center;
+    margin-top: 30px;
+  }
+  
+  /* Enroll Now Button Styling */
+  form input[type="submit"] {
+    background-color: #4f89f9;
+    color: white;
+    border: none;
+    padding: 16px 40px;
+    font-size: 18px;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
+  }
+  
+  form input[type="submit"]:hover {
+    background-color: #3578e5;
+    transform: scale(1.05);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  }
+  
+  form input[type="submit"]:active {
+    background-color: #2f6eb5;
+    transform: scale(1);
+    box-shadow: none;
+  }
+  
+  form input[type="submit"]:focus {
+    outline: none;
+  }
+  /* Error Pop-up Styling */
+  .error-popup {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  /* Error content box */
+  .error-content {
+    background-color: rgba(0, 0, 0, 0.8);
+    border-radius: 10px;
+    height: 25%;
+    width: 25%;
+    text-align: center;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center; /* Center horizontally */
+  }
+  
+  /* Error message text */
+  .error-content p {
+    font-size: 1.2rem;
+    color: rgb(255, 255, 255);
+    margin-top: 20px; /* Adds space from the top */
+  }
+  
+  /* Close button for error pop-up */
+  .error-close-btn {
+    position: absolute;
+    top: 5px;
+    right: 5px;
+    font-size: 2rem;
+    cursor: pointer;
+    color: rgb(255, 255, 255);
+  }
+  .error-close-btn:hover{
+    color: rgb(255, 0, 0);
+  }
+  
+  /* Success Pop-up Styling */
+  .success-popup {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5); /* Slightly darkened background */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  /* Success content box */
+  .success-content {
+    background-color: rgba(255, 255, 255, 0.8); /* Dark background */
+    border-radius: 10px;
+    height: 25%;
+    width: 25%;
+    text-align: center;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center; /* Center horizontally */
+  }
+  
+  /* Success message text */
+  .success-content p {
+    font-size: 1.2rem;
+    color: green; /* Change text color to green */
+    margin-top: 20px; /* Adds space from the top */
+  }
+  
+  /* Close button for success pop-up */
+  .success-close-btn {
+    position: absolute;
+    top: 5px;
+    right: 5px;
+    font-size: 2rem;
+    cursor: pointer;
+    color: rgb(255, 255, 255);
+  }
+  .success-close-btn:hover {
+    color: rgb(255, 0, 0); /* Change to green on hover */
+  }
+  
+  
+  /* Error Pop-up Styling for failed email */
+  .error-popup-mail {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5); /* Slightly darkened background */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  /* Error content box for failed email */
+  .error-content-mail {
+    background-color: rgba(0, 0, 0, 0.8); /* Dark background */
+    border-radius: 10px;
+    height: 25%;
+    width: 25%;
+    text-align: center;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center; /* Center horizontally */
+  }
+  
+  /* Error message text for failed email */
+  .error-content-mail p {
+    font-size: 1.2rem;
+    color: red; /* Change text color to red for error */
+    margin-top: 20px; /* Adds space from the top */
+  }
+  
+  /* Close button for error pop-up (failed email) */
+  .error-close-btn-mail {
+    position: absolute;
+    top: 5px;
+    right: 5px;
+    font-size: 2rem;
+    cursor: pointer;
+    color: rgb(255, 255, 255);
+  }
+  
+  .error-close-btn-mail:hover {
+    color: rgb(255, 0, 0); /* Red hover effect for close button */
+  }
+  
+  
+  /* Confirmation Pop-up Styling */
+  .confirmation-popup {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .confirmation-content {
+    background-color: white;
+    padding: 30px;
+    border-radius: 10px;
+    text-align: center;
+    width: 300px;
+  }
+  
+  /* Actions section in confirmation popup */
+  .confirmation-actions {
+    display: flex;
+    justify-content: space-around;
+    margin-top: 20px;
+  }
+  
+  .confirmation-actions button {
+    padding: 12px 25px;
+    border-radius: 5px;
+    cursor: pointer;
+    border: none;
+    font-size: 16px;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+  }
+  
+  .confirm-btn {
+    background-color: #4caf50;
+    color: white;
+  }
+  
+  .confirm-btn:hover {
+    background-color: #45a049;
+    transform: scale(1.05);
+  }
+  
+  .confirm-btn:active {
+    background-color: #388e3c;
+    transform: scale(1);
+  }
+  
+  .cancel-btn {
+    background-color: #f44336;
+    color: white;
+  }
+  
+  .cancel-btn:hover {
+    background-color: #e53935;
+    transform: scale(1.05);
+  }
+  
+  .cancel-btn:active {
+    background-color: #d32f2f;
+    transform: scale(1);
+  }

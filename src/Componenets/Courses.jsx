@@ -1,5 +1,5 @@
+import '../Styles/Courses.css'
 import React, { useState } from 'react';
-
 const Courses = () => {
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [selectedCourse, setSelectedCourse] = useState(null);

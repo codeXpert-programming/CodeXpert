@@ -1,0 +1,53 @@
+.hero-section {
+    background-color: #000; /* Black background */
+    color: #fff; /* White text */
+    height: 100vh; /* Full viewport height */
+    text-align: left;
+  }
+  
+  .hero-content {
+    width: 40%;
+    padding: 10% 0% 0% 10%;
+  }
+  
+  .hero-content h1 {
+    font-size: 2.5rem;
+    font-weight: bold;
+    margin-bottom: 1rem;
+  }
+  
+  .hero-content p {
+    font-size: 1.2rem;
+    margin-bottom: 2rem;
+  }
+  
+  .hero-buttons {
+    display: flex;
+    gap: 1rem;
+    justify-content: flex-start;
+  }
+  
+  .btn {
+    padding: 0.8rem 2rem;
+    border: none;
+    cursor: pointer;
+    font-size: 1rem;
+    font-weight: bold;
+  }
+  
+  .enroll-btn {
+    background-color: #fff;
+    color: #000;
+    border: none;
+  }
+  
+  .learn-more-btn {
+    background-color: transparent;
+    color: #fff;
+    border: 1px solid #fff;
+  }
+  
+  .btn:hover {
+    opacity: 0.8;
+  }
+  

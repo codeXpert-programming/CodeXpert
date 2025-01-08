@@ -1,4 +1,4 @@
-import React from 'react';
+import '../Styles/Header.css';
 import { useNavigate } from 'react-router-dom';
 
 export default function Header() {
@@ -10,15 +10,18 @@ export default function Header() {
 
   return (
     <nav>
-      <div>
+      <main>
         <img src="/CodeXpert.jpg" alt="CodeXpert Logo" />
-      </div>
       <ul>
-        <li onClick={() => navigateTo("/")}>Home</li> 
-        <li onClick={() => navigateTo("/about-us")}>About Us</li> 
-        <li onClick={() => navigateTo("/courses")}>Courses</li> 
-        <li onClick={() => navigateTo("/enroll")}>Enroll</li>
+        <li onClick={() => navigateTo("/")}>Home</li>
+        <li onClick={() => navigateTo("/about-us")}>About Us</li>
+        <li onClick={() => navigateTo("/contact-us")}>Contact Us</li>
       </ul>
+      </main>
+      <div>
+        <button onClick={() => navigateTo("/courses")} className="btn">Courses</button>
+        <button onClick={() => navigateTo("/enroll")} className="btn">Enroll</button>
+      </div>
     </nav>
   );
 }

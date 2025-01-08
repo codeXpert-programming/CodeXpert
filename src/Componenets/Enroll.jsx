@@ -1,3 +1,4 @@
+import '../Styles/Enroll.css'
 import { useState } from 'react';
 import emailjs from 'emailjs-com';
 

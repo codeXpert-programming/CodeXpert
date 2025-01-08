@@ -4,6 +4,7 @@ import Home from "./Componenets/Home";
 import About from "./Componenets/About";
 import Enroll from "./Componenets/Enroll";
 import Courses from "./Componenets/Courses";
+import Contact from "./Componenets/Contact";
 
 export default function AppRouter() {
   const location = useLocation();
@@ -17,6 +18,7 @@ export default function AppRouter() {
       <Route path="/about-us" element={<About />} />
       <Route path="/courses" element={<Courses />} />
       <Route path="/enroll" element={<Enroll />} />
+      <Route path="/contact-us" element={<Contact />} />
     </Routes>
   );
 }
