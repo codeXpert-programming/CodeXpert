@@ -114,7 +114,7 @@
   }
   
   .course-item.selected {
-    background-color: #4f89f9;
+    background-color: green;
     color: white;
   }
   

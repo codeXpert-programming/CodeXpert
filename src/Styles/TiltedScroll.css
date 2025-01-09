@@ -1,0 +1,78 @@
+.container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 3;
+    transform:translate(0%,-15%) rotate(-20deg); /* Tilt container 30 degrees to the left */
+    pointer-events: none;
+  }
+  
+  .inner-container {
+    position: relative;     
+    width: fit-content;
+    display: flex;
+    justify-content: space-between; 
+    gap: 2rem;
+    overflow: hidden;
+  }
+  
+  .scroll-grid, .scroll-grid-2 {
+    height: 135vh;
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+    gap: 1.25rem;
+  }
+  
+  .grid-item {
+    display: flex;
+    height: 150px;
+    align-items: center;
+    cursor: pointer;
+    gap: 0.5rem;
+    border-radius: 0.375rem;
+    border: 1px solid #222;
+    padding: 1rem 0.5rem;
+    box-shadow: 0 4px 6px rgba(146, 146, 146, 0.1);
+    overflow: hidden; /* Ensure no content spills out */
+  }
+  
+  .grid-item img {
+    width: auto;
+    height: 150px;
+    object-fit: cover;
+  }
+  
+  @keyframes straight-scroll {
+    0% {
+      transform: translateY(0);
+    }
+    50% {
+      transform: translateY(calc(-200%));
+    }
+    100%{
+        transform: translateY(0);
+    }
+  }
+  
+  @keyframes straight-scroll-reverse {
+    0% {
+      transform: translateY(calc(-200%));
+    }
+    50% {
+      transform: translateY(0);
+    }
+    100% {
+        transform: translateY(calc(-200%));
+      }
+  }
+  
+  /* Apply the animations */
+  .scroll-grid {
+    animation: straight-scroll 20s linear infinite;
+  }
+  
+  .scroll-grid-2 {
+    animation: straight-scroll-reverse 20s linear infinite;
+  }
+  

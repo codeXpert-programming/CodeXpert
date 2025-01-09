@@ -98,7 +98,7 @@ const Courses = () => {
     },
     {
       title: 'Flask',
-      imgSrc: '/flask.svg',
+      imgSrc: '/flask.png',
       description: 'Learn Flask, a micro web framework written in Python.',
       prerequisites: ['Python'],
       longDescription: 'Flask is a lightweight and easy-to-use web framework for Python. Designed to be simple and flexible, Flask allows developers to quickly build web applications without a lot of boilerplate code. This course will teach you how to create routes, handle requests, work with databases, and build a fully functional web application using Flask. You will also explore advanced topics such as user authentication, testing, and deploying Flask applications to production.',

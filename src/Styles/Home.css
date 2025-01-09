@@ -3,11 +3,17 @@
     color: #fff; /* White text */
     height: 90vh; /* Full viewport height */
     text-align: left;
+    width: 100%;
+    display: flex;
   }
   
   .hero-content {
     width: 40%;
-    padding: 10% 0% 0% 10%;
+    padding: 5% 0% 0% 5%;
+  }
+  .tilded-container{
+    width: 60%;
+   overflow: hidden;
   }
   
   .hero-content h1 {
@@ -68,7 +74,7 @@
   }
   
   .learn-text {
-    width: 40%; /* Text on the left */
+    width: 60%; /* Text on the left */
   }
   
   .learn-text h2 {
@@ -80,27 +86,23 @@
   .learn-text p {
     font-size: 1.1rem;
     margin-bottom: 2rem;
-    color: #333; /* Dark text for readability */
+    color: #000000; /* Dark text for readability */
+  }
+  
+  .learn-text p strong{
+    font-size: 1.1rem;
+    margin-bottom: 2rem;
+    color: #ff0000; /* Dark text for readability */
   }
   
   .learn-buttons {
     display: flex;
     gap: 1rem;
   }
-  
-  .learn-image {
-    width: 40%; /* Image on the right */
-    height: 300px; /* Adjust the height as needed */
-    background-color: #ddd; /* Placeholder for the image */
-  }
-  
-  .learn-image .image-placeholder {
-    height: 100%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    color: #999;
-    font-size: 1.2rem;
+
+  .learn-image  {
+   height: 300px;
+   width: 300px;
   }
   
   .learn-buttons .learn-btn {

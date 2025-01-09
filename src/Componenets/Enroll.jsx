@@ -23,7 +23,7 @@ export default function Enroll() {
     { name: 'Spring', imgSrc: '/spring.svg' },
     { name: 'Hibernate', imgSrc: '/hibernate.svg' },
     { name: '.NET', imgSrc: '/dotnet.svg' },
-    { name: 'Flask', imgSrc: '/flask.svg' },
+    { name: 'Flask', imgSrc: '/flask.png' },
   ];
 
   const handleCourseSelection = (course) => {
