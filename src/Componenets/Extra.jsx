@@ -1,7 +1,9 @@
 import { motion, useMotionValue, useTransform } from "framer-motion";
 import { useState, useEffect } from "react";
 import "../Styles/Stack.css";
-import '../Styles/TiltedScroll.css';
+import "../Styles/TiltedScroll.css";
+import "../Styles/Articles.css"; 
+
 
 function CardRotate({ children, onSendToBack, sensitivity }) {
     const x = useMotionValue(0);
@@ -71,7 +73,7 @@ function CardRotate({ children, onSendToBack, sensitivity }) {
         if (cards.length > 1) {
           sendToBack(cards[cards.length - 1].title);
         }
-      }, 5000); 
+      }, 3000); 
   
       return () => clearInterval(timer); 
     }, [cards]);
@@ -180,3 +182,131 @@ export function TiltedScroll(){
       </div>
     );
   };
+
+export const steps = [
+  {
+      title: "Join Our Interactive Classes via Google Meet Effortlessly!",
+      description: "Simply fill out our enrollment form to get started today.",
+      src:"Gmeet.png",
+      alt:"Gmeet Image"
+    },
+    {
+      title: "Attend Classes from Anywhere with Just a Click!",
+      description: "Join live sessions on Google Meet and learn from instructors.",
+      src:"Class.jpg",
+      alt:"Class Image"
+    },
+    {
+      title: "Pay as You Learn: Only ₹49 per Class!",
+      description: "Experience quality education without the hassle of subscriptions or sign-ups.",
+      src:"Study.jpg",
+      alt:"Study Image"
+    },
+];
+
+export const Articles = () => {
+  const [articles, setArticles] = useState([]);
+  const [loading, setLoading] = useState(true);
+  const [error, setError] = useState(null);
+  const [currentIndex, setCurrentIndex] = useState(0); 
+
+  const tags = ['javascript', 'java', 'python', 'c#']; 
+
+  useEffect(() => {
+    const tagsQuery = tags.map(tag => `tag[]=${tag}`).join('&');
+    const apiUrl = `https://dev.to/api/articles?${tagsQuery}`;
+    
+    // Fetch articles from Dev.to API with multiple tags
+    fetch(apiUrl)
+      .then((response) => {
+        if (!response.ok) {
+          throw new Error('Network response was not ok');
+        }
+        return response.json();
+      })
+      .then((data) => {
+        console.log('Fetched articles:', data); // Log the fetched articles
+        setArticles(data.slice(0, 10)); // Get the first five articles
+        setLoading(false);
+      })
+      .catch((err) => {
+        console.error('Fetch error:', err); // Log any fetch errors
+        setError('Failed to fetch articles');
+        setLoading(false);
+      });
+  }, []);
+
+  // Function to open the article in a new tab
+  const openExternalLink = (url) => {
+    window.open(url, '_blank', 'noopener,noreferrer');
+  };
+
+  // Function to go to the next set of articles
+  const nextArticle = () => {
+    if (currentIndex < articles.length - 2) {
+      setCurrentIndex(currentIndex + 1);
+    }
+  };
+
+  // Function to go to the previous set of articles
+  const prevArticle = () => {
+    if (currentIndex > 0) {
+      setCurrentIndex(currentIndex - 1);
+    }
+  };
+
+  if (loading) {
+    return <div className="blog-loading">Loading...</div>;
+  }
+
+  if (error) {
+    return <div className="blog-error">{error}</div>;
+  }
+
+  // Select the two articles to display based on currentIndex
+  const displayedArticles = articles.slice(currentIndex, currentIndex + 2);
+
+  return (
+    <div className="blog-container">
+      <h1 className="trending-heading">Trending Articles</h1>
+
+      <div className="carousel-container">
+        <button className="carousel-button" onClick={prevArticle} disabled={currentIndex === 0}>
+          &#8249;
+        </button>
+
+        <div className="blog-content-container">
+          {displayedArticles.map((article) => (
+            <div
+              key={article.id}
+              className="blog-item"
+              onClick={() => openExternalLink(article.url)}
+            >
+              <h2 className="blog-title">{article.title}</h2>
+              <p className="blog-author">
+                <strong>Author:</strong> {article.user.username}
+              </p>
+              <p className="blog-date">
+                <strong>Published:</strong> {new Date(article.created_at).toLocaleDateString()}
+              </p>
+              <p className="blog-description">
+                {article.description || 'No description available for this article.'}
+              </p>
+              {article.social_image && (
+                <img
+                  src={article.social_image}
+                  alt="Article"
+                  className="blog-image"
+                />
+              )}
+            </div>
+          ))}
+        </div>
+
+        <button className="carousel-button" onClick={nextArticle} disabled={currentIndex >= articles.length - 2}>
+         &#8250;
+        </button>
+      </div>
+    </div>
+  );
+};
