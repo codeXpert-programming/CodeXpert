@@ -210,7 +210,7 @@ export const Articles = () => {
   const [error, setError] = useState(null);
   const [currentIndex, setCurrentIndex] = useState(0); 
 
-  const tags = ['javascript', 'java', 'python', 'c#']; 
+  const tags = ['javascript', 'java', 'python', 'c#','sql']; 
 
   useEffect(() => {
     const tagsQuery = tags.map(tag => `tag[]=${tag}`).join('&');

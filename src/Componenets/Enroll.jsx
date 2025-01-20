@@ -5,9 +5,9 @@ import emailjs from 'emailjs-com';
 export default function Enroll() {
   const [selectedCourses, setSelectedCourses] = useState([]);
   const [showConfirmation, setShowConfirmation] = useState(false);
-  const [showError, setShowError] = useState(false); // State for error message
-  const [showSuccess, setShowSuccess] = useState(false); // State for success popup
-  const [showErrorMail, setShowErrorMail] = useState(false); // State for success popup
+  const [showError, setShowError] = useState(false); 
+  const [showSuccess, setShowSuccess] = useState(false); 
+  const [showErrorMail, setShowErrorMail] = useState(false); 
 
   const courses = [
     { name: 'Java', imgSrc: '/java.svg' },
@@ -43,7 +43,7 @@ export default function Enroll() {
 
     if (!name || !phone || !email || selectedCourses.length === 0) {
       if (selectedCourses.length === 0) {
-        setShowError(true); // Show error if no course is selected
+        setShowError(true); 
       }
       return;
     }
@@ -54,29 +54,29 @@ export default function Enroll() {
   const handleConfirmation = () => {
     setShowConfirmation(false);
 
-    const form = document.querySelector('form'); // Get form reference
+    const form = document.querySelector('form');
 
-    // Prepare template parameters
+    
     const templateParams = {
       name: form.name.value,
       email: form.email.value,
       phone: form.phone.value,
-      selected_courses: selectedCourses.join(', '), // Convert selected courses array to string
+      selected_courses: selectedCourses.join(', '), 
     };
 
-    // Send data using EmailJS
+    
     emailjs
       .send(
-        'enrollforcourse', // Service ID (your EmailJS service ID)
-        'template_qap6qrw', // Template ID (your EmailJS template ID)
-        templateParams, // Template parameters
-        'T8zuwxeVEEbe1YzK5' // Public Key/User ID (your EmailJS public key)
+        'enrollforcourse', 
+        'template_qap6qrw', 
+        templateParams, 
+        'T8zuwxeVEEbe1YzK5' 
       )
       .then(
         (response) => {
-          setShowSuccess(true); // Show success popup
+          setShowSuccess(true); 
           form.reset();
-          setSelectedCourses([]); // Clear selected courses after submission
+          setSelectedCourses([]);
         },
         (error) => {
           setShowErrorMail(true);
@@ -85,11 +85,11 @@ export default function Enroll() {
   };
 
   const closeErrorPopup = () => {
-    setShowError(false); // Close the error popup
+    setShowError(false); 
   };
 
   const closeSuccessPopup = () => {
-    setShowSuccess(false); // Close the success popup
+    setShowSuccess(false); 
   };
 
   return (

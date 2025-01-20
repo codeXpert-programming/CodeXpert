@@ -1,60 +1,112 @@
-/* General section styling */
 .about-content {
-    background-color: #fff; /* White background for the section */
-    padding: 1% 20%; /* Increased padding for top, bottom, and sides */
-    text-align: center; /* Centering the text */
-    margin-top: 20px; /* Optional margin to separate from any section above */
+    background-color: #fff; 
+    padding: 1% 20%; 
+    text-align: center;
+    margin-top: 20px; 
   }
   
-  /* Heading outside the container, black color */
+ 
   .about-heading {
-    color: #000; /* Black color for the heading */
-    font-size: 2.5rem; /* Large font size */
-    margin-bottom: 50px; /* Increased space between heading and content */
+    color: #000;
+    font-size: 2.5rem;
+    margin-bottom: 50px; 
   }
   
-  /* Heading 2 styles for subheadings */
+
   .about-subheading {
-    font-size: 2rem; /* Medium-large font for subheadings */
-    color: #000; /* Black for subheadings */
-    margin-top: 20px; /* Space above subheading */
-    margin-bottom: 20px; /* Space below subheading */
+    font-size: 2rem;
+    color: #000; 
+    margin-top: 20px;
+    margin-bottom: 20px; 
   }
   
-  /* Paragraphs and Text */
+
   .about-intro,
   .about-text {
-    font-size: 1.2rem; /* Font size for paragraphs */
-    line-height: 1.6; /* Line height for better readability */
-    text-align: justify; /* Justified text for better alignment */
-    margin-bottom: 20px; /* Space between paragraphs */
+    font-size: 1.2rem;
+    line-height: 1.5; 
+    text-align: justify; 
+    margin-bottom: 20px; 
   }
   
-  /* List styling */
   .about-list {
-    list-style: none; /* Remove list bullets */
+    list-style: none;
     padding: 0;
-    text-align: left; /* Align list to the left */
-    display: flex; /* Flexbox for horizontal alignment */
-    justify-content: center; /* Center the list items horizontally */
-    flex-wrap: wrap; /* Allow the items to wrap into multiple lines if needed */
-    margin-top: 20px; /* Added margin-top for space above list */
+    text-align: left; 
+    display: flex; 
+    justify-content: center; 
+    flex-wrap: wrap; 
+    margin-top: 20px; 
   }
   
   .about-list-item {
-    font-size: 1.1rem; /* Slightly smaller font for list items */
-    margin: 10px 20px; /* Space between list items */
-    align-items: center; /* Align arrow and text vertically */
-  }
-  
-  .about-list-item strong {
-    font-weight: bold; /* Bold text for list items */
+    font-size: 1.1rem; 
+    line-height: 1.5; 
+    margin: 10px 20px; 
+    align-items: center; 
   }
   
   .about-list-item::before {
-    content: "→ "; /* Arrow before each list item */
-    color: #000; /* Black for arrows */
-    font-size: 1.3rem; /* Adjusted arrow size */
-    margin-right: 10px; /* Space between the arrow and the text */
+    content: "→ "; 
+    color: #000; 
+    font-size: 1.3rem;
+    margin-right: 10px; 
   }
   
+  @media (max-width: 480px){
+
+    .about-content {
+      background-color: #fff; 
+      padding: 1% 10% 5%; 
+      text-align: center; 
+      margin-top: 10px; 
+    }
+    
+    
+    .about-heading {
+      color: #000;
+      font-size: 1.5rem;
+      margin-bottom: 20px; 
+    }
+    
+
+    .about-subheading {
+      font-size: 1.2rem; 
+      color: #000; 
+      margin: 10px;
+    }
+    
+    .about-intro,
+    .about-text {
+      font-size: 1rem; 
+      line-height: 1.5; 
+      text-align: justify; 
+      margin-bottom: 10px; 
+    }
+    
+
+    .about-list {
+      list-style: none;
+      padding: 0;
+      text-align:justify; 
+      display: flex;
+      justify-content: center; 
+      flex-wrap: wrap; 
+      margin-top: 10px;
+    }
+    
+    .about-list-item {
+      font-size: 1rem; 
+      line-height: 1.5; 
+      margin: 5px 10px; 
+      align-items: center; 
+    }
+    
+    .about-list-item::before {
+      content: "→ "; 
+      color: #000;
+      font-size: 1rem; 
+      margin-right: 5px;
+    }
+
+  }
