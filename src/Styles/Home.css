@@ -189,4 +189,198 @@
     font-size: 0.9rem;
     margin-bottom: 1rem;
   }
+
+
+
+  @media (max-width: 480px){
+    .hero-section {
+      background-color: #000; /* Black background */
+      color: #fff; /* White text */
+      height: 90vh; /* Full viewport height */
+      text-align: left;
+      width: 100%;
+      overflow: hidden;
+    }
+    .hero-content {
+      position: absolute;
+      width: 100%;
+      top: 50%;
+    }
+    .tilded-container{
+      width: 100%;
+     opacity: 0.2;
+     padding: 0% 0% 0% 10%;
+    z-index: 10;
+    }
+    
+    .hero-content h1 {
+      font-size: 1.5rem;
+      font-weight: bold;
+      margin-bottom: 1rem;
+    }
+    
+    .hero-content p {
+      font-size: 0.8rem;
+      margin-bottom: 2rem;
+    }
+    
+    .hero-buttons {
+      display: flex;
+      gap: 1rem;
+      justify-content: flex-start;
+    }
+    
+    .hero-btn {
+      padding: 0.8rem 2rem;
+      border: none;
+      cursor: pointer;
+      font-size: 1rem;
+      font-weight: bold;
+    }
+    
+    .explore-btn {
+      background-color: #fff;
+      color: #000;
+      border: none;
+    }
+    
+    .know-more-btn {
+      background-color: transparent;
+      color: #fff;
+      border: 1px solid #fff;
+    }
+    
+    .hero-btn:hover {
+      opacity: 0.8;
+    }
+    
+    .learn-section {
+      height: 80vh;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      background-color: #fff; /* White background */
+      padding: 5rem 10%; /* Adjust padding to your liking */
+    }
+    
+    .learn-container {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      width: 100%;
+    }
+    
+    .learn-text {
+      width: 60%; /* Text on the left */
+    }
+    
+    .learn-text h2 {
+      font-size: 2rem;
+      font-weight: bold;
+      margin-bottom: 1rem;
+    }
+    
+    .learn-text p {
+      font-size: 1.1rem;
+      margin-bottom: 2rem;
+      color: #000000; /* Dark text for readability */
+    }
+    
+    .learn-text p strong{
+      font-size: 1.1rem;
+      margin-bottom: 2rem;
+      color: #ff0000; /* Dark text for readability */
+    }
+    
+    .learn-buttons {
+      display: flex;
+      gap: 1rem;
+    }
   
+    .learn-image  {
+     height: 300px;
+     width: 300px;
+    }
+    
+    .learn-buttons .learn-btn {
+      padding: 0.8rem 2rem;
+      cursor: pointer;
+      font-size: 1rem;
+      font-weight: bold;
+      border: 2px solid;
+    }
+    
+    .learn-more-btn {
+      background-color: rgb(255, 255, 255);
+      color: #000;
+    }
+    
+    .enroll-btn {
+      background-color: #000;
+      color: #fff;
+    }
+    
+    .learn-btn:hover {
+      opacity: 0.8;
+    }
+    
+    .steps-container {
+      background-color: #000;
+      color: #fff; 
+      height: 80vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      padding: 8% 0%;
+    }
+    
+    .steps-title {
+      font-size: 2rem;
+      padding-bottom: 2%;
+    }
+    
+    .steps-wrapper {
+      display: flex;
+      justify-content: space-between;
+      width: 80%;
+    }
+    
+    .steps-card {
+      background-color: #ffffff; /* Darker shade for cards */
+      color: #000;
+      border-radius: 6px;
+      padding: 1rem;
+      width: 280px;
+      transition-duration: 1s;
+      cursor: pointer;
+    }
+    .steps-card:hover{
+      background-color: #000;
+      color: #fff;
+      border: 2px solid;
+      box-shadow: rgba(255, 255, 255, 0.1) 0px 1px 1px 0px inset, rgba(137, 137, 255, 0.25) 0px 50px 100px -20px, rgba(255, 255, 255, 0.3) 0px 30px 60px -30px;
+    }
+    .steps-image {
+      height: 250px;
+      border-radius: 6px;
+      margin-bottom: 1rem;
+      overflow: hidden;
+  
+    }
+    .steps-image img{
+     height: 100%;
+     border-radius: 5px;
+    }
+    
+    .steps-card-title {
+      font-size: 1.2rem;
+      margin: 0.5rem 0;
+    }
+    
+    .steps-card-description {
+      font-size: 0.9rem;
+      margin-bottom: 1rem;
+    }
+  }

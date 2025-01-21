@@ -148,7 +148,6 @@ const Courses = () => {
     </div>
   </div>
 )}
-
     </section>
   );
 };
