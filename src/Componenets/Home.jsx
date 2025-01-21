@@ -19,10 +19,10 @@ export default function Home() {
   return (
     <>
       <section className="hero-section">
-        <div className="tilded-container">
+       <div className="tilded-container">
           <TiltedScroll />
         </div>
-        <div className="hero-content">
+        <div className="hero-content"> 
           <h1>Unlock Your Coding Potential with codeXpert</h1>
           <p>
             At codeXpert, we unlock more than just code—here, we help you bring ideas to life, we offer you the tools to build the future you envision. With options in languages like Java, Python, React, and more, you can chart your own learning path, step by step. Whether you're starting from scratch or advancing your skills, our courses are designed to help you craft the skills needed to develop powerful projects, just like the ones you see around you. Here, your coding journey is in your hands—every line of code you write brings you closer to your goals. Code your path with us.

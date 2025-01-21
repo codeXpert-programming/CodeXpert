@@ -42,3 +42,50 @@
   color: red;
   font-size: 1.8rem;
 }
+
+@media (max-width: 480px){
+  .stack-classnames-container {
+    position: relative;
+    perspective: 600px;
+  }
+  
+  .stack-classnames-card-rotate {
+    position: absolute;
+    cursor: grab;
+  }
+  
+  .stack-classnames-card {
+    width: 150px;
+    height: 150px;
+    border-radius: 8px;
+    overflow: hidden;
+    background-color: rgb(255, 255, 255);
+    border: 1px solid red;
+  }
+  
+  .stack-classnames-card-content img {
+    width: 85px;
+    height: 85px;
+    pointer-events: none;
+  }
+  
+  .stack-classnames-card-content {
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+  }
+  
+  .stack-classnames-card-title {
+    font-size: 0.8rem;
+    margin-top: 10px;
+    color: #000000;
+    text-align: center;
+  }
+  
+  .stack-classnames-card-title strong {
+    color: red;
+    font-size: 1rem;
+  }
+}
